@@ -1,8 +1,8 @@
-defmodule Paper.Repo.Migrations.ContentModel do
+defmodule Paper.Repo.Migrations.ContentData do
   use Ecto.Migration
 
   def up do
-    create table(:messages) do
+    create table(:contents) do
       add :title, :string
       add :author, :string
       add :summary, :string, default: ""
@@ -11,10 +11,10 @@ defmodule Paper.Repo.Migrations.ContentModel do
       add :published_date, :naive_datetime
       timestamps()
     end
-    create index(:messages, [:status])
+    create index(:contents, [:status])
   end
 
   def down do
-    drop table(:messages)
+    drop table(:contents)
   end
 end
