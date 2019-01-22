@@ -19,6 +19,12 @@ defmodule PaperWeb.Router do
     get "/", PageController, :index
   end
 
+  scope "/api", Paper do
+    pipe_through :api
+
+    forward "/content", Content.Router
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", PaperWeb do
   #   pipe_through :api
