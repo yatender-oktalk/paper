@@ -1,36 +1,32 @@
 <div class="jumbotron">
-  <h2><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h2>
-  <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
+  <h2><%= gettext "Welcome to %{name}!", name: "Published Content" %></h2>
+  <%# <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p> %>
 </div>
 
-<div class="row marketing">
-  <div class="col-lg-6">
-    <h4>Resources</h4>
-    <ul>
-      <li>
-        <a href="http://phoenixframework.org/docs/overview">Guides</a>
-      </li>
-      <li>
-        <a href="https://hexdocs.pm/phoenix">Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-    </ul>
-  </div>
+<%# <div class="row marketing"> %>
 
-  <div class="col-lg-6">
-    <h4>Help</h4>
-    <ul>
-      <li>
-        <a href="http://groups.google.com/group/phoenix-talk">Mailing list</a>
-      </li>
-      <li>
-        <a href="http://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">@elixirphoenix</a>
-      </li>
-    </ul>
-  </div>
-</div>
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Summary</th>
+      <th scope="col">Author</th>
+      <th scope="col">Content</th>
+      <th scope="col">Published Date</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for content <- @contents do %>
+    <tr>
+      <th scope="row"><%=content[:id]%></th>
+      <td><%= content.title%></td>
+      <td><%= content.summary%></td>
+      <td><%= content.author%></td>
+      <td><%= content.content%></td>
+      <td><%= content.published_date%></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+<%# </div> %>
