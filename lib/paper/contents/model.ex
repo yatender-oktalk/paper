@@ -13,9 +13,26 @@ defmodule Paper.Content.Model do
     timestamps()
   end
 
-  #TODO
   def get_content(params) do
-    {:ok, %Paper.Content.Model{}}
+    limit = params["limit"]
+    offset = params["offset"]
+
+    query =
+      from u in Paper.Content.Model,
+      where: u.status == ^"published",
+      select: %{
+        id: u.id,
+        title: u.title,
+        summary: u.summary,
+        author: u.author,
+        content: u.content,
+        published_date: u.published_date
+      },
+      limit: ^limit,
+      offset: ^offset,
+      order_by: [:id]
+
+      {:ok, Repo.all(query)}
   end
 
   def create_content(conn) do
