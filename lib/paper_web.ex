@@ -58,16 +58,6 @@ defmodule PaperWeb do
     end
   end
 
-  def model do
-    quote do
-      use Ecto.Schema
-
-      import Ecto
-      import Ecto.Changeset
-      import Ecto.Query
-    end
-  end
-
   @doc """
   When used, dispatch to the appropriate controller/view/etc.
   """
