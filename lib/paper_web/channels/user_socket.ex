@@ -1,8 +1,7 @@
 defmodule PaperWeb.UserSocket do
   use Phoenix.Socket
-
   ## Channels
-  # channel "room:*", PaperWeb.RoomChannel
+  channel "room:*", PaperWeb.RoomChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket

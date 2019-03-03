@@ -4,6 +4,9 @@
 </div>
 
 <%# <div class="row marketing"> %>
+  <div id="messages"></div>
+  <input id="chat-input" type="text"></input>
+
 
   <table class="table">
   <thead>
@@ -29,4 +32,5 @@
 <% end %>
   </tbody>
 </table>
+
 <%# </div> %>
