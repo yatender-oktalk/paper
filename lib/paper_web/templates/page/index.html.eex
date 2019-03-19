@@ -1,36 +1,5 @@
 <div class="jumbotron">
-  <h2><%= gettext "Welcome to %{name}!", name: "Published Content" %></h2>
+  <h2><%= gettext "Welcome to %{name}!", name: "Elixir Demo" %></h2>
   <%# <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p> %>
+  <h2><span style='font-size:50px;'>&#931;</span> 1.. <%= @num %> = <%= @contents %> </h2>
 </div>
-
-<%# <div class="row marketing"> %>
-  <div id="messages"></div>
-  <input id="chat-input" type="text"></input>
-
-
-  <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Title</th>
-      <th scope="col">Summary</th>
-      <th scope="col">Author</th>
-      <th scope="col">Content</th>
-      <th scope="col">Published Date</th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for content <- @contents do %>
-    <tr>
-      <th scope="row"><%=content[:id]%></th>
-      <td><%= content.title%></td>
-      <td><%= content.summary%></td>
-      <td><%= content.author%></td>
-      <td><%= content.content%></td>
-      <td><%= content.published_date%></td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-
-<%# </div> %>

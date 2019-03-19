@@ -59,4 +59,12 @@ defmodule Paper.Content.Model do
     |> validate_required([:title, :author, :content, :status, :published_date])
   end
 
+  def calculate_sum(params) do
+    num = params["num"] |> Paper.Utils.convert_to_int
+    {:ok, sum(num)}
+  end
+
+  def sum(num), do: sum(0, num)
+  def sum(acc, 0), do: acc
+  def sum(acc, num), do: sum(acc + num, num - 1)
 end
